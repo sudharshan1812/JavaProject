@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Vehicle - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Register Vehicle</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="card form-card">
+                    <h3 id="form-title">New Vehicle</h3>
+                    <form id="vehicle-form">
+                        <input type="hidden" id="vehicle-id">
+                        <div class="field">
+                            <label for="vehicleType">Vehicle Type</label>
+                            <select id="vehicleType">
+                                <option value="CAR">Car</option>
+                                <option value="TRUCK">Truck</option>
+                                <option value="BUS">Bus</option>
+                                <option value="EMERGENCY">Emergency Vehicle</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="registrationNumber">Registration Number</label>
+                            <input id="registrationNumber" required placeholder="TN01AB1234" maxlength="15">
+                        </div>
+                        <div class="field">
+                            <label for="ownerName">Owner Name</label>
+                            <input id="ownerName" required placeholder="Gobinath" maxlength="50">
+                        </div>
+
+                        <div id="type-fields">
+                            <div class="field" data-type="CAR">
+                                <label for="numberOfSeats">Number of Seats</label>
+                                <input id="numberOfSeats" type="number" min="1" value="5">
+                            </div>
+                            <div class="field" data-type="TRUCK" style="display:none">
+                                <label for="loadCapacity">Load Capacity (tons)</label>
+                                <input id="loadCapacity" type="number" min="1" step="0.5" value="10">
+                            </div>
+                            <div class="field" data-type="BUS" style="display:none">
+                                <label for="passengerCapacity">Passenger Capacity</label>
+                                <input id="passengerCapacity" type="number" min="1" value="40">
+                            </div>
+                            <div class="field" data-type="EMERGENCY" style="display:none">
+                                <label for="emergencyService">Emergency Service</label>
+                                <select id="emergencyService">
+                                    <option>Ambulance</option>
+                                    <option>Fire Engine</option>
+                                    <option>Police</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="rfidTagId">RFID Tag <small>(optional - assign later)</small></label>
+                            <select id="rfidTagId">
+                                <option value="">-- No tag --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn primary" id="submit-btn">Register Vehicle</button>
+                            <a class="btn" href="vehicles.html">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/register-vehicle.js"></script>
+</body>
+</html>

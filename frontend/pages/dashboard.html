@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Dashboard</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <main class="content">
+                <div class="grid-3" style="margin-bottom:20px">
+                    <div>
+                        <div class="kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px">
+                            <div class="kpi">
+                                <div class="label">Registered Vehicles</div>
+                                <div class="value" id="kpi-vehicles">-</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="label">Today's Transactions</div>
+                                <div class="value" id="kpi-transactions">-</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="label">Today's Revenue</div>
+                                <div class="value green" id="kpi-revenue">-</div>
+                            </div>
+                            <div class="kpi">
+                                <div class="label">Payment Success</div>
+                                <div class="value green" id="kpi-success">-</div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="table-wrap" style="border:none">
+                                <table>
+                                    <thead>
+                                        <tr><th>RFID</th><th>Vehicle</th><th>Toll</th><th>Status</th><th>Time</th></tr>
+                                    </thead>
+                                    <tbody id="live-tbody">
+                                        <tr><td colspan="5" class="empty">Loading...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card" style="margin-bottom:16px">
+                            <h3>System Status</h3>
+                            <div class="status-row"><span><span class="dot on"></span>RFID Reader</span><span id="st-reader">ONLINE</span></div>
+                            <div class="status-row"><span><span class="dot on"></span>Database</span><span id="st-db">ONLINE</span></div>
+                            <div class="status-row"><span><span class="dot on"></span>Payment System</span><span id="st-pay">ONLINE</span></div>
+                        </div>
+
+                        <div class="card">
+                            <h3>Simulate RFID Scan</h3>
+                            <div class="field" style="margin-bottom:10px">
+                                <input id="scan-tag" placeholder="Enter tag id e.g. RFID001" list="tag-list">
+                                <datalist id="tag-list"></datalist>
+                            </div>
+                            <button class="btn primary" id="scan-btn" style="width:100%;justify-content:center">SCAN RFID</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="scan-modal">
+        <div class="modal">
+            <h2>RFID SCANNED</h2>
+            <div id="scan-detail"></div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

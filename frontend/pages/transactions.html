@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Transactions</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="search-row">
+                    <input type="datetime-local" id="from" title="From">
+                    <input type="datetime-local" id="to" title="To">
+                    <button class="btn" id="filter-btn">Apply Filter</button>
+                    <button class="btn ghost" id="clear-btn">Clear</button>
+                    <button class="btn" id="refresh-btn" style="margin-left:auto">Refresh</button>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Transaction ID</th><th>Vehicle</th><th>Type</th><th>RFID</th><th>Base</th><th>Dynamic</th><th>Final</th><th>Status</th><th>Time</th></tr>
+                        </thead>
+                        <tbody id="tx-tbody">
+                            <tr><td colspan="9" class="empty">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/transactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+========================================
+        SMART TOLL SYSTEM
+           TOLL RECEIPT
+========================================
+Transaction : TXN-20260809-68786
+Vehicle     : TN10ZZ9999
+Owner       : Demo User
+RFID        : RFID007
+Type        : BUS
+========================================
+Base Toll   : Rs 120.00
+Traffic     : Rs 60.00
+Peak        : Rs 0.00
+Weather     : Rs 30.00
+Pollution   : Rs 24.00
+----------------------------------------
+TOTAL       : Rs 234.00
+========================================
+Payment     : WALLET - PAY-193932
+Status      : SUCCESS
+Date        : 09-Aug-2026 10:17 PM
+========================================
+Thank you for using Smart Toll.

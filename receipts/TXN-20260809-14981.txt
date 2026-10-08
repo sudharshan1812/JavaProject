@@ -1,0 +1,23 @@
+========================================
+        SMART TOLL SYSTEM
+           TOLL RECEIPT
+========================================
+Transaction : TXN-20260809-14981
+Vehicle     : TN01AB1234
+Owner       : Arun
+RFID        : RFID001
+Type        : CAR
+========================================
+Base Toll   : Rs 80.00
+Traffic     : Rs 20.00
+Peak        : Rs 0.00
+Weather     : Rs 0.00
+Pollution   : Rs 0.00
+----------------------------------------
+TOTAL       : Rs 100.00
+========================================
+Payment     : UPI - PAY-263350
+Status      : SUCCESS
+Date        : 09-Aug-2026 09:55 pm
+========================================
+Thank you for using Smart Toll.

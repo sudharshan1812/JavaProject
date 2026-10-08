@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFID Control - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">RFID Control</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="grid-2" style="margin-bottom:20px">
+                    <div class="card">
+                        <h3>Reader Status</h3>
+                        <div style="font-size:15px;margin-bottom:14px">
+                            <span id="reader-status"><span class="dot on"></span>ONLINE</span>
+                            <span style="color:var(--muted);margin-left:10px" id="reader-id"></span>
+                        </div>
+                        <div style="display:flex;gap:10px">
+                            <button class="btn primary" id="start-reader">Start Reader</button>
+                            <button class="btn danger" id="stop-reader">Stop Reader</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Simulate RFID Scan</h3>
+                        <div class="field" style="margin-bottom:10px">
+                            <input id="scan-tag" placeholder="Enter RFID tag id e.g. RFID001" list="registered-tags" autocomplete="off">
+                            <datalist id="registered-tags"></datalist>
+                        </div>
+                        <button class="btn primary" id="scan-btn">SCAN RFID</button>
+                        <div id="scan-result" style="margin-top:14px"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+                        <h3 style="margin:0">Registered Tags</h3>
+                        <form id="tag-form" style="display:flex;gap:8px">
+                            <input id="new-tag" placeholder="New tag id e.g. RFID008" style="max-width:220px" required>
+                            <button class="btn small">+ Add Tag</button>
+                        </form>
+                    </div>
+                    <div class="table-wrap" style="border:none">
+                        <table>
+                            <thead>
+                                <tr><th>Tag ID</th><th>Vehicle</th><th>Status</th><th style="text-align:right">Actions</th></tr>
+                            </thead>
+                            <tbody id="tags-tbody">
+                                <tr><td colspan="4" class="empty">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/rfid.js"></script>
+</body>
+</html>

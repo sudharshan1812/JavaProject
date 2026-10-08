@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Settings</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Dynamic Pricing Conditions</h3>
+                        <p style="color:var(--muted);font-size:13px;margin-bottom:16px">
+                            Controls the live congestion factors applied by the pricing engine on every RFID scan.
+                        </p>
+                        <div class="field">
+                            <label for="traffic">Traffic Level</label>
+                            <select id="traffic">
+                                <option value="LOW">Low</option>
+                                <option value="MEDIUM">Medium</option>
+                                <option value="HIGH">High</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="weather">Weather</label>
+                            <select id="weather">
+                                <option value="SUNNY">Sunny</option>
+                                <option value="RAINY">Rain</option>
+                                <option value="FOG">Fog</option>
+                                <option value="STORM">Storm</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="pollution">Pollution (AQI)</label>
+                            <select id="pollution">
+                                <option value="GOOD">Good (50)</option>
+                                <option value="MODERATE">Moderate (100)</option>
+                                <option value="POOR">Poor (200)</option>
+                                <option value="SEVERE">Severe (400)</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn primary" id="save-conditions">Save Conditions</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Base Toll Rates</h3>
+                        <table>
+                            <thead><tr><th>Vehicle Type</th><th>Base Toll</th><th>Peak Surcharge</th></tr></thead>
+                            <tbody>
+                                <tr><td>Car</td><td class="mono">₹80</td><td rowspan="4" class="mono">+ ₹15 (8-11 AM / 5-9 PM)</td></tr>
+                                <tr><td>Truck</td><td class="mono">₹180</td></tr>
+                                <tr><td>Bus</td><td class="mono">₹120</td></tr>
+                                <tr><td>Emergency</td><td class="mono">FREE (₹0)</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="color:var(--muted);font-size:12px;margin-top:14px">
+                            Surcharges: Traffic up to 50%, Weather up to 25%, Pollution up to 20% of base toll.
+                        </p>
+                        <div style="margin-top:20px;border-top:1px solid var(--border);padding-top:14px">
+                            <h3 style="margin-bottom:6px">Operator</h3>
+                            <p style="color:var(--muted);font-size:13px">
+                                Signed in as <span id="settings-user"></span>.
+                            </p>
+                            <button class="btn danger small" id="logout-btn2">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+========================================
+        SMART TOLL SYSTEM
+           TOLL RECEIPT
+========================================
+Transaction : TXN-20260809-39888
+Vehicle     : TN02CD5678
+Owner       : Kumar
+RFID        : RFID002
+Type        : TRUCK
+========================================
+Base Toll   : Rs 180.00
+Traffic     : Rs 45.00
+Peak        : Rs 0.00
+Weather     : Rs 0.00
+Pollution   : Rs 0.00
+----------------------------------------
+TOTAL       : Rs 225.00
+========================================
+Payment     : UPI - PAY-394641
+Status      : SUCCESS
+Date        : 09-Aug-2026 09:57 pm
+========================================
+Thank you for using Smart Toll.

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Payments</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="grid-3">
+                    <div>
+                        <div class="card">
+                            <h3>Pending Payments</h3>
+                            <div class="table-wrap" style="border:none">
+                                <table>
+                                    <thead>
+                                        <tr><th>Transaction</th><th>Vehicle</th><th>Amount</th><th style="text-align:right">Action</th></tr>
+                                    </thead>
+                                    <tbody id="pending-tbody">
+                                        <tr><td colspan="4" class="empty">Loading...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p style="color:var(--muted);font-size:12px;margin-top:10px">
+                                Unpaid transactions from <a href="rfid.html">RFID scans</a> appear here.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="height:fit-content">
+                        <h3>Pay Now</h3>
+                        <div id="pay-detail" style="min-height:180px">
+                            <div class="empty">Select an unpaid transaction</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="receipt-modal">
+        <div class="modal">
+            <h2>Payment Successful</h2>
+            <pre class="receipt" id="receipt-text"></pre>
+            <button class="btn primary" style="width:100%;justify-content:center;margin-top:14px" onclick="$('#receipt-modal').classList.remove('open')">Done</button>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/payments.js"></script>
+</body>
+</html>

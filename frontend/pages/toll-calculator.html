@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toll Pricing - Smart Toll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="shell">
+        <div id="sidebar-placeholder"></div>
+        <div class="main">
+            <header class="topbar">
+                <div class="page-title" id="topbar-title">Toll Pricing</div>
+                <div class="user">
+                    <span class="avatar" id="user-avatar"></span>
+                    <span id="user-name"></span>
+                    <button class="btn ghost small" id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <main class="content">
+                <div class="grid-3">
+                    <div class="card" id="conditions-card">
+                        <h3>Current Conditions</h3>
+                        <div id="conditions-body" style="min-height:230px">Loading...</div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dynamic Toll Calculator</h3>
+                        <div class="field">
+                            <label for="calc-type">Vehicle Type</label>
+                            <select id="calc-type">
+                                <option value="CAR">Car</option>
+                                <option value="TRUCK">Truck</option>
+                                <option value="BUS">Bus</option>
+                                <option value="EMERGENCY">Emergency Vehicle</option>
+                            </select>
+                        </div>
+                        <button class="btn primary" id="calc-btn">Calculate Toll</button>
+                        <div id="calc-result" style="margin-top:14px">
+                            <div class="empty" style="padding:12px">Choose a vehicle type to see the dynamic breakdown</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/toll.js"></script>
+</body>
+</html>
